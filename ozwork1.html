@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <script>
+        const contain=document.getElementById("container")
+        const h1=document.createElement("h1")
+        h1.textContent="몬스터잡아보자잇"
+        contain.appendChild(h1)
+
+        let dmg=parseInt(prompt("1회데미지를 입력하세욘"))
+        let hp=100
+        let attackcount=0;
+
+        if(dmg>0){
+            while(hp>0){
+                
+                hp=hp-dmg;
+                attackcount++;
+
+                if(hp<0)hp=0
+
+                const newp=document.createElement("p")
+                newp.textContent=`몬스터를 ${attackcount}회 공격`
+                contain.appendChild(newp)
+
+                const storng=document.createElement("strong")
+                storng.textContent=`몬스터의 남은 hp는 ${hp}입니다`
+                contain.appendChild(storng)
+            }
+            const h2=document.createElement("h2")
+            h2.textContent="몬스터잡기완료용"
+            contain.appendChild(h2)
+        }else{
+            alert("데미지 잘못입력")
+        }
+    </script>
+</body>
+</html>
